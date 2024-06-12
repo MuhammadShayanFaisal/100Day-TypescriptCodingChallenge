@@ -1,0 +1,3 @@
+I have read the following article about some programming tips for beginners 
+Here you can access it:
+https://www.geeksforgeeks.org/programming-tips-for-beginners/ 
