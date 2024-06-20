@@ -1,0 +1,119 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            // If statement
+            let year = prompt("In which year ECMAScript-2015 specification published?",'');
+            if (year == 2015) alert ('You are right!');
+            if (year == 2015) {
+                alert("That's Correct!");
+                alert("You'er so smart");
+            }
+            // Boolean conversions
+            if (0) {  // 0 is falsy
+                alert("False");  }
+            if (1) {  // 1 is truthy
+                alert("1 is truthy");  
+            }
+           
+            let cond = (year == 2015);
+            if (cond) {
+                alert("Good you are Correct");  // shows Good you are Correct
+            }
+           // else clause
+            let yearr = prompt('In which year was the ECMAScript-2015 specification published', '');
+            if (yearr == 2015) {
+                alert('You guessed it right!');
+            } else {
+                alert('How can you be so wrong?')  // any value except 2015
+            }
+            // Several Conditions if else
+            let year1 = prompt('In which year was the ECMAScript-2015 specification published', '');
+            if (year1 < 2015) {
+                alert('Too early');
+            } else if (year1 > 2015) {
+                alert('Too late');
+            } else {
+                alert('Exactly');
+            }
+            // Conditional operator ‘?’
+            let accessAllowed;
+            let age = prompt('How old are you?','');
+            if (age > 18) {
+                accessAllowed = true;
+            } else {
+                accessAllowed = false;
+            }
+            alert(accessAllowed);
+            let accessAllowed1 = (age > 18) ? true : false;
+            alert(accessAllowed1);  
+            let accessAllowed2 = age > 18 ? true : false;
+            alert(accessAllowed2);
+            let accessAllowed3 = age > 18;
+            alert(accessAllowed3);
+            // Multiple ‘?’
+            let age1 = prompt('Age?', 18);
+            let message = (age1 < 3) ? 'Hi, baby' : 
+            (age1 < 18) ? 'Hello!' : 
+            (age1 < 100) ? 'Greetings' : 
+            'What an unusual age!';
+            alert(message);
+            if (age1 < 3) {
+                alert('Hi, baby');
+            } else if (age1 < 18) {
+                alert('Hello!');
+            } else if (age1 < 100) {
+                alert('Greetings');
+            } else {
+                alert('What an unusual age!');
+            }
+            // Non-traditional use of ‘?’
+            let company = prompt('Which company created JavaScript?', '');
+            (company == 'Netscape') ? 
+            alert('Right!') : alert('Worng');
+            if (company == 'Netscape') {
+                alert('Right!');
+            } else {
+                alert('Wrong');
+            }
+            // Task 1: String with zero
+            //Yes, it will.
+            if ("0") {
+            alert( 'Hello' );
+             }
+            // Task2:  The name of JavaScript
+            let name = prompt('What is the “official” name of JavaScript?', '');
+            if (name == 'ECMAScript') {
+                alert('Right!');
+            } else {
+                alert("You don’t know? ECMAScript!");
+            }
+
+            // Task3:  Show the sign
+            let num = prompt('Enter a number','');
+            if (num > 0) {
+                alert(1);
+            } else if (num < 0) {
+                alert(-1);
+            } else {
+                alert(0);
+            }
+
+            // Task4:  Rewrite 'if' into '?'
+            let a = 2;
+            let b = 1;
+            let result = (a + b < 4) ? 'Below' : 'Over';
+            alert(result);
+
+            // Task5:  Rewrite 'if..else' into '?'
+            let login = prompt('Job Position','');
+            let message1 = (login == 'Employee') ? 'Hello' :
+            (login == 'Director') ? 'Greetings' : 
+            (login == '') ? 'No login' : 
+            '';
+            alert(message1);
+        </script>
+    </body>
+</html>

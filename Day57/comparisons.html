@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            alert(2 > 1); // true
+            alert(2 == 1); // false
+            let result = 5 > 4;
+            alert(result);  // true
+            alert('Z' > 'A');        // true
+            alert('Glow' > 'Glee');  // true
+            alert('2' > '12'); // true
+            alert('2' > 1);   // true, 
+            alert('01' == 1); // true, 
+            alert(true == 1);  // true
+            alert(false == 0); // true 
+            let a = 0;
+            alert(Boolean(a));  // false 
+            let b = "0";
+            alert(Boolean(b));  // true (b is non empty string)
+            alert( a == b); // true
+            alert(0 == false);  // true
+            alert(0 === false);  // false, because the type are different  
+            alert(null === undefined);  // false
+            alert(null == undefined);  // true    
+            alert(null > 0);  // (1) false  (comparison convert null into 0)
+            alert(null == 0); // (2) false  (null and undefined don’t equal anything else)
+            alert(null >= 0); // (3) true   (comparison convert null into 0)
+            alert(undefined > 0);  // false 
+            alert(undefined < 0);  // false 
+            alert(undefined == 0); // false 
+        </script>
+    </body>
+</html>
