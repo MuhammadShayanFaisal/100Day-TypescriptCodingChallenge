@@ -1,0 +1,61 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            // Nullish Coalescing
+            // Introduction 
+            result = (a !== null && a !== undefined) ? a : b;
+            let user;
+            alert(user ?? 'Anonymous');  // Anonymous (user is undefined)
+            let  user1 = "John";
+            alert(user1 ?? "Anonymous"); // John (user1 is not null/undefined)
+            let firstName = null;
+            let lastName = null;
+            let nickName = 'Supercoder';
+            // Shows the first defined value
+            alert(firstName ?? lastName ?? nickName ?? "Anonymous");  // Supercoder
+            // ?? Comparison with ||
+            let firstName1 = null;
+            let lastName1 = null;
+            let nickName1 = 'Supercoder';
+            alert(firstName1 || lastName1 || nickName1 || "Anonymous"); // Supercoder
+            let height = 0;
+            alert(height || 100);  // 100  (0 is falsy)
+            alert(height ?? 0);  // 0 (checks height for being null/undefined)
+            // Precedence
+            let height1 = null;
+            let width1 = null;
+            let area = (height1 ?? 100) * (width1 ?? 50);
+            alert(area);  // 5000
+            let area1 = height1 ?? 100 * width1 ?? 50;
+            // ...works this way (not what we want):
+            let area11 = height1 ?? (100 * width1) ?? 50;
+            let a = (1 && 2) ?? 3;
+            alert(a); // 2 (The expression 2 ?? 3 evaluates to 2 because 2 is not null or undefined.)
+            // My Practices
+            let c = null;
+            let d = null;
+            alert(c ?? d);  // null
+            // Since both x and y are null, the ?? operator will return y. Therefore, the output of
+            // alert(x ?? y); will be null.
+
+            // Another example
+            let x = null;
+            let y = undefined;
+            alert(x ?? y);  // undefined
+            // The ?? (nullish coalescing) operator returns the right-hand side operand when the
+            // left-hand side operand is null or undefined. In this case, x is null, so the
+            // ?? operator will return y because y is undefined.
+
+            // ?? used to assign default values to variables:
+
+            // set height=100, if height is null or undefined
+            height = height ?? 100;
+            // if height was previously set to null or undefined, running height = height ?? 100;
+            // would set height to 100. Otherwise, if height already had a value (other than null
+            // or undefined), it would keep that value.
+        </script>
+    </body>
+</html>

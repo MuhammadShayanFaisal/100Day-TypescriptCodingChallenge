@@ -1,0 +1,116 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            // Logical Operators
+            //  ||(OR)
+            alert(true || true);   // true
+            alert(false || true);  // true
+            alert(true || false);  // true
+            alert(false || false); // false
+            if (1 || 0) {  // works just like if (true || false)
+                alert("truthy!");
+            }
+            let hour = 9;
+            if (hour < 10 || hour > 18) {
+                alert('The Office is closed.')
+            }
+            let hour1 = 12;
+            let isWeekend = true;
+            if (hour1 < 10 || hour1 || 18 || isWeekend) {
+                alert('The office is closed!'); // it is the weekend
+            }
+            // OR "||" finds the first truthy value
+            alert(1 || 0);  // 1 (1 is truthy)
+            alert(null || 1);  // 1 (1 is the first truthy value)
+            alert(null || 0 || 1);  // 1 (the first truhty value)
+            alert(undefined || null || 0); // 0, (all falsy, returns the last value)
+            let firstName = '';
+            let lastName = '';
+            let nickName = 'SuperCoder';
+            alert(firstName || lastName || nickName || "Anonymous");  // SuperCode
+            true || alert("Not Printed"); // will not printed because true is the first truthy
+            false || alert("Printed");    // will printed because the alert is the first truthy
+            // && (AND)
+            alert(true && true);    // true
+            alert(true && false);   // false
+            alert(false && false);  // false
+            alert(false && false);  // false
+            let hours = 12;
+            let minute = 30;
+            if (hours == 12 && minute == 30) {
+                alert("The time is 12:30");  // will print this line
+            }
+            if (1 && 0) {  // evaluated as true && false
+                alert("Won't work, because the result is falsy");
+            }
+            // AND “&&” finds the first falsy value
+            alert(1 && 0);  // 0
+            alert(1 && 5);  // 5
+            alert(null && 5);  // null
+            alert(0 && 'no matter what');  // 0
+            alert(1 && 2 && null && 3);  // null
+            alert(1 && 2 && 3);  // 3, the last one
+            let x = 1;
+            (x > 0) && alert("Greator than zero!");  // Greator than zero! because the first operand is true
+            if (x1 > 0) alert("Greator then zero");  // Greator then zero
+            // ! (NOT)
+            alert( !true );  // false
+            alert( !0 );  // true
+            alert( !"Abc" );  // false
+            alert( !null );  // true
+            alert( !!"non-empty string" );  // true   (!"string" => false => !false => true)
+            alert( !!null );  // false
+            alert( !!0 );  // false
+            alert(Boolean("non-empty string"));  // true
+            alert(Boolean(null));  // false
+
+            alert( alert(1) || 2 || alert(3) ); // first shows 1 but returns undefined so OR goes to second
+            // Task 1: Result of OR
+            alert( null || 2 || undefined );// 2
+            // Task 2: What is the result of OR'ed alerts?
+            alert( alert(1) || 2 || alert(3) );// first 1 then 2
+            // Task 03: Result of AND
+            alert(1 && null && 2);// null
+            // Task4: What is the result of AND'ed alerts?
+            alert( alert(1) && alert(2) );  // 1 and then undefined
+            // Task5: The result of OR AND OR
+            alert( null || 2 && 3 || 4);  // 3
+            // Task6: Check the range between
+            if (age >= 14 && age <= 90) {
+                alert("Task6");
+            }
+            // Task7: Check the range outside
+            if (!(age >= 14 && age <= 90)) {
+                alert("Task7a");
+            }
+            if (age < 14 || age > 90) {
+                alert("Task7b")
+            }
+            // Task8: A question about "if"
+            if (-1 || 0) alert('first');  // -1 truthy so if will execueted and print first
+
+            if (-1 && 0) alert('second'); // 0 falsy so if will not execute
+            
+            if (null || -1 && 1) alert('third'); // && operator precedence is higher than ||
+            // Task9: Check the login
+            let login = prompt("Who's there?",'');
+            if (login === 'Admin') {
+                let password = prompt('Password?','');
+                if (password === 'TheMaster') {
+                    alert('Welcome!');
+                } else if (password === '' || password === null) {
+                    alert('Cancelled');
+                } else {
+                    alert('Wrong Password');
+                }
+            } else if (login === '' || login === null) {
+                alert('Cancelled');
+            } else {
+                alert("I don't know you");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+       <script>
+        // The "switch" statement
+        // The syntax
+        // The switch has one or more case blocks and an optional default.
+        // switch(x) {
+        // case 'value1':  // if (x === 'value1')
+        //     ...
+        //     [break]
+
+        // case 'value2':  // if (x === 'value2')
+        //     ...
+        //     [break]
+
+        // default:
+        //     ...
+        //     [break]
+        // }
+
+        // An example
+        let a = 2 + 2;
+        switch(a) {
+            case 3:
+                alert('Too Small');
+                break;
+            case 4:
+                alert('Exactly');// That’s a match, so the execution starts from case 4 until the nearest break.
+                break;
+            case 5:
+                alert('Too Big');
+                break;
+            default:
+                alert("I don't Know such values");
+        }
+
+        // If there is no break then the execution continues with the next case without any checks.
+        let b = 2 + 2;
+        switch(b) {
+            case 3:
+                alert('Too Small');
+            case 4:
+                alert('Exactly'); // Execution start from here until the default inner code
+            case 5:
+                alert('Too Big');
+            default:
+                alert("I don't know such value");
+        }
+        let c = "1";
+        let d = 0;
+
+        switch(+c) {
+            case d + 1:
+                alert("This runs, because +a is 1, exactly equals b+1");
+                break;
+            default:
+                alert("This doesn't run");
+        }
+        // Grouping of “case”
+        let m = 3;
+        switch(m) {
+            case 4:
+                alert('Right');
+                break;
+            case 3:  // (*) grouped two cases
+            case 5:
+                alert('Wrong!');
+                alert("Why you don't take a math class?");   
+            default:
+                alert('The result is strange. Really');
+        }
+        // Type matters
+        let arg = prompt('Enter a value?');
+        switch(arg) {
+            case '0':
+            case '1':
+                alert('One or Zero');
+                break;
+            case '2':
+                alert('Two');
+                break;
+            case 3:
+                alert('Never executes.');
+                break;
+            default:
+                alert('An unknown value');
+        }
+        // Tasks
+        // Task 01
+        // Rewrite the "switch" into an "if"
+        let browser = prompt('Enter a browser', '');
+
+        if (browser === 'Edge') {
+            alert("You've got the Edge!");
+        } else if (browser === 'Chrome' ||
+                   browser == 'Firefox' ||
+                   browser == 'Safari' ||
+                   browser == 'Opera') {
+            alert('Okay we support these browsers too');
+        } else {
+            alert('We hope that this page looks ok!');
+        }
+        //Task 02 
+        // Rewrite "if" into "switch"
+        let k = +prompt('k?', '');
+
+        switch(k) {
+            case 0: 
+                alert(0);
+                break;
+            case 1:
+                alert(1);
+                break;
+            case 2:
+            case 3:
+                alert('2,3');
+                break;
+            default:
+                alert('Unknown value');
+        }
+       </script>
+    </body>
+</html>
