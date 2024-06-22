@@ -1,0 +1,139 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            // Function Expression
+            function sayHi() {
+                alert('Hello');
+            }
+            let sayHi1 = function() {
+                alert("Hello");
+            };
+            // Function is a value
+            function sayHi2() {
+                alert('Hello');
+            }
+            alert(sayHi2);  // Show the function code
+            function sayHi3() {    // Create
+                alert('Hello');
+            }
+            let func = sayHi3;     // Copy
+            //  Line (2) copies it into the variable func. Please note again: there are no parentheses
+            // after sayHi. If there were, then func = sayHi() would write the result of the call sayHi()
+            // into func, not the function sayHi itself.
+            func();    // Hello    // run the copy (it works) 
+            sayHi3();  // Hello    // This still works too (why would'nt it)
+            let sayHi4 = function() {
+                alert('Hello');
+            };
+            let func1 = sayHi4;
+            func1();  // Hello
+            // Everything would work the same.
+            // Callback functions
+            function ask(question, yes, no) {
+                if (confirm(question)) yes()
+                else no();
+            }
+            function showOk() {
+                alert("You Agreed");
+            }
+            function showCancel() {
+                alert("You cancelled the execution");
+            }
+            // usage: functions showOk, showCancel are passed as arguments to ask
+            ask('Are you agreed?', showOk, showCancel);
+            function ask1(question, yes, no) {
+                if (confirm(question)) yes()
+                else no()
+            }
+            ask1('Are you agreed?',
+                function() { alert('You Agreed'); },
+                function() { alert('You cancelled the execution'); }
+            );
+            
+            // Function Expression vs Function Declaration
+            // Function Declaration: a function, declared as a separate statement, in the main code flow:
+            function sum(a, b) {
+                return a + b;
+            }
+            // Function Expression: a function, created inside an expression or inside another syntax
+            // construct.
+            let sum = function(a, b) {
+                return a + b;
+            }
+            /*
+            A Function Expression is created when the execution reaches it and is usable only from that moment.
+            // For example, this works:
+            sayHi5('John');    // Hello, John
+            function sayHi5(name) {
+                alert(`Hello, ${name}`);
+            }
+            // The Function Declaration sayHi is created when JavaScript is preparing to start the script
+            // and is visible everywhere in it.
+            // …If it were a Function Expression, then it wouldn’t work:
+            sayHi6('John');   // error
+            let sayHi6 = function(name) {   // (*) no magic any more
+                alert(`Hello, ${name}`);
+            }
+            // Another special feature of Function Declarations is their block scope.
+            // In strict mode, when a Function Declaration is within a code block, it’s visible everywhere
+            // inside that block. But not outside of it.
+            // If we use Function Declaration, it won’t work as intended:
+            let age = prompt("What is your age?", 18);
+            // conditionally declare a function
+            if (age < 18) {
+                function welcome() {
+                    alert('Hello');
+                }
+            } else {
+                function welcome() {
+                    alert('Greetings!');
+                }
+            }
+            // ...use it later
+            welcome();  // Error: welcome is not defined
+            // That’s because a Function Declaration is only visible inside the code block in which it resides.
+            // Here’s another example:
+            let age1 = 16;  // take 16 as an example
+            if (age1 < 18) {
+                welcome1();              // runs    (*)
+                function welcome1() {
+                    alert('Hello');
+                }
+                welcome1();              // runs    (*) = Function Declration is available everywhere in the 
+                                         // block where it's declared.
+            } else {
+                function welcome1() {
+                    alert('Greetings!');
+                }
+            }
+            // Here we're out of curly braces,
+            // so we can not see Function Declarations made inside of them.
+            welcome1();  // Error: welcome1 is not defined
+            // What can we do to make welcome visible outside of if?
+            // The correct approach would be to use a Function Expression and assign welcome to the
+            // variable that is declared outside of if and has the proper visibility.
+            // This code works as intended:
+            let age2 = prompt('What is your age?', 18);
+            let welcome2;
+            if (age < 18) {
+                welcome2 = function() {
+                    alert('Hello');
+                };
+            } else {
+                welcome2 = function() {
+                    alert('Greetings!');
+                };
+            }
+            welcome2();  // Ok now
+            // Or we could simplify it even further using a question mark operator ?:
+            let age3 = prompt('What is your age?', 18);
+            let welcome3 = (age3 < 18) ? 
+                function() { alert('Hello'); } :
+                function() { alert('Greetings!'); };
+            welcome3();  // Ok now*/
+        </script>
+    </body>
+</html>

@@ -1,0 +1,236 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            // Functions
+            // Function Declaration
+            function showMessage() {
+                alert('Hello everyone!');
+            }
+            function name(parameter1, parameter2, ... parameterN) {
+            // body
+            }
+            function showMessage1() {
+                alert('Hello everyone!');
+            }
+            showMessage1();
+            showMessage1();
+            // Local Variable
+            function showMessage2() {
+                let message = "Hello, I'm JavaScript"; // local variable
+                alert(message);
+            }
+            showMessage2();  // Hello, I'm JavaScript
+            // alert(message);  // Error: The variable is local to the function
+            // Outer Variable
+            let userName = 'John';
+            function showMessage3() {
+                let message1 = 'Hello, ' + userName;
+                alert(message1);
+            }
+            showMessage3();  // Hello, John
+            // The function has full access to the outer variable. It can modify it as well.
+            // For instance:
+            let userName1 = 'John';
+            function showMessage4() {
+                userName1 = 'Bob';  // (1) Changed the outer variable
+                let message2 = 'Hello ' + userName1;
+                alert(message2);
+            }
+            alert(userName1);  // John before the function call.
+            showMessage4(); 
+            alert(userName1);  // Bob, the value was modified by the function.
+            let userName2 = 'John';
+            function showMessage5() {
+                let userName2 = 'Bob';  // declare a local variable
+                let message3 = 'Hello ' + userName2;  // Bob
+                alert(message3);
+            }
+            showMessage5();
+            alert(userName2);  // John, unchanged, the function did not access the outer variable
+            // Parameters
+            function showMessage6(form, text) {
+                alert(from + ': ' + text);
+            }
+            showMessage6('Ann', 'Hello!');  // Ann: Hello! (*)
+            showMessage6('Ann', "What's up?"); // Ann: What's up? (**)
+            function showMessage7(from, text) {
+                from = '*' + from + '*';  // make "from" look nicer
+                alert(from + ': ' + text);
+            }
+            let from = 'Ann';
+            showMessage7(from,'Hello');  // *Ann* Hello
+            alert(from);  // Ann
+            // Default values
+            showMessage7("Ann");  // *Ann*: undefined
+            function showMessage8(from, text = 'no text given') {
+                alert(from + ': ' + text);
+            }
+            showMessage8('Ann');  // Ann: no text given
+            showMessage8('Ann', undefined);  // Ann: no text given
+            function showMessage9(from, text = anotherFunction()) {
+                // anotherFunction() only executed if no text given
+                // its result becomes the value of text
+            }
+            function showMessage10(from, text) {
+                if (text === undefined) {
+                    text = 'no text given';
+                }
+                alert(from + ': ' + text);
+            }
+            // …Or using the || operator:
+            function showMessage11(from, text) {
+                // If the value of text is falsy, assign the default value
+                // this assumes that text == "" is the same as no text at all
+                text = text || 'no text given';
+                // ...
+            }
+            function showMessage12(text) {
+                // ...
+                if (text === undefined) {
+                    text = 'empty message';
+                }
+                alert(text);
+            }
+            showMessage12();  // empty message
+            // …Or we could use the || operator:
+            function showMessage13(text) {
+                // if text is undefined or otherwise falsy, set it to 'empty'
+                text = text || 'empty';
+                // ...
+            }
+            function showCount(count) {
+                // if count is undefined or null , show "unknown"
+                alert(count ?? "Unknown");
+            }
+            showCount(0);  // 0
+            showCount(null);  // Unknown
+            showCount();  // Unknown
+            // Returning a value
+            function sum(a, b) {
+                return a + b;
+            }
+            let result = sum(1, 2);
+            alert(result);  // 3
+            function checkAge(age) {
+                if (age >= 18) {
+                    return true;
+                } else {
+                    return confirm('Do you have permission from your parents?');
+                }
+            }
+            let age = prompt('How old are you?', 18);
+            if (checkAge(age)) {
+                alert('Access granted');
+            } else {
+                alert('Access denied');
+            }
+            function showMovies(age) {
+                if (!checkAge(age)) {
+                    return;
+                }
+                alert('Showing you the movie');  // (*)
+                // ...
+            }
+            function doNothing() { /* empty */ }
+            alert(doNothing() === undefined);  // true
+            // An empty return is also the same as return undefined:
+            function doNothing1() {
+                return;
+            }
+            alert(doNothing1 === undefined);  // true
+            // Naming a function
+            // Examples of such names:
+            // showMessage(..)     // shows a message
+            // getAge(..)          // returns the age (gets it somehow)
+            // calcSum(..)         // calculates a sum and returns the result
+            // createForm(..)      // creates a form (and usually returns it)
+            // checkPermission(..) // checks a permission, returns true/false
+
+            // Function == Comment
+            function showPrimes(n) {
+            nextPrime: for (let i = 2; i < n; i++) {
+                for (let j = 2; j < i; j++) {
+                if (i % j == 0) continue nextPrime;
+                }
+                alert( i ); // a prime
+            }
+            }
+            function showPrimes(n) {
+
+            for (let i = 2; i < n; i++) {
+                if (!isPrime(i)) continue;
+
+                alert(i);  // a prime
+            }
+            }
+            function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if ( n % i == 0) return false;
+            }
+            return true;
+            }
+            //Task 01: Is else required
+            // function checkAge(age) {
+            //     if (age > 18) {
+            //         return true;
+            //     } else {
+            //        // ...
+            //        return confirm('Did parents allow you?');
+            //     }
+            // }
+            // function checkAge(age) {
+            //     if (age > 18) {
+            //     return true;
+            //  }
+            //  // ...
+            //  return confirm('Did parents allow you?');
+            // }
+            // The Above function will return true if age is greater than 18, and return confirm('Did parents allow you?') if age<18, it means that there is no difference between above two code
+            // Tasks 02
+            // Rewrite the function using '?' or '||'
+            // Using a question mark operator '?':
+            function checkAge1(age) {
+                return (age > 18) ? true : confirm('Did Parents allow you?');
+            }
+            // Using OR || (the shortest variant):
+            function checkAge2(age) {
+                return (age > 18) || confirm('Did Parents allow you?');
+            }
+            // Task 03
+            // Write a function min(a,b) which returns the least of two numbers a and b.
+            // A solution using if
+            function min(a, b){
+                if (a < b) {
+                    return a;
+                } else {
+                    return b;
+                }
+            }
+            // A solution with a question mark operator '?'
+            function min1(a, b) {
+                return a < b ? a : b;
+            }
+            // Task 04
+            // Write a function pow(x,n) that returns x in power n. Or, in other words, multiplies x by
+            // itself n times and returns the result.
+            // P.S. In this task the function should support only natural values of n: integers up from 1.
+            function pow(x, n) {
+                let result = x;
+                for (let i = 1; i < n; i++) {
+                    result *= x;
+                }
+                return result;
+            }
+            let x = prompt('x?', '');
+            let n = prompt('n?', '');
+            if (n < 1) {
+                alert(`Power ${n} is not supported, use a positive integer`);
+            } else {
+                alert(pow(x, n));
+            }
+        </script>
+    </body>
+</html>
