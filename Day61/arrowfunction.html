@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <head>
+            <title>My HTML Page</title>
+        </head>
+        <script>
+            // Arrow function
+            // let func = (arg1, arg2, ..., argN) => expression;
+            // In other words, it’s the shorter version of:
+            // let func = function(arg1, arg2, ..., argN) {
+            //     return expression;
+            // };
+            // Let’s see a concrete example:
+            let sum = (a,b) => a + b;
+            // This arrow function is a shorter form of :
+            // let sum = function(a, b) {
+            //     return a + b;
+            // };
+            alert(sum(2,3));  // Output: 5
+            // As you can see, (a, b) => a + b means a function that accepts two arguments named a
+            // and b. Upon the execution, it evaluates the expression a + b and returns the result.
+            // If we have only one argument, then parentheses around parameters can be omitted, making
+            // that even shorter.
+            let double = n => n * 2;
+            // roughly the same as: let double = function(n) { retuen n * 2}
+            alert(double(3));  // 6
+            // If there are no arguments, parentheses are empty, but they must be present:
+            let sayHi = () => alert('Hello');
+            sayHi();
+            // Arrow functions can be used in the same way as Function Expressions.
+            let age = prompt('What is your age?', 18);
+            let welcome = (age < 18) ?
+                () => alert('Hello') :
+                () => alert('Greetings');
+            welcome();
+            // Multiline arrow function
+            let sum1 = (a, b) => {   // the curly braces opens a multiline function
+                let result = a + b;  // if we use curly braces, then we need an explicit "return"
+                return result;
+            };
+            alert(sum1(2, 1));  // 3
+            // brackets allow us to write multiple statements inside the function, but we need an
+            // explicit return to return something.
+            // Task
+            function ask(question, yes, no) {
+                if (confirm(question)) yes();
+                else no();
+            } 
+            ask(
+                "Do you Agree?",
+                () => alert('You Agreed.'),
+                () => alert('You cancelled the execution.')
+            );
+        </script>
+    </body>
+</html>
