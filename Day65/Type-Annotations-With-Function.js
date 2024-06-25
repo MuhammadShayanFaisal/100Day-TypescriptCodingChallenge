@@ -1,4 +1,4 @@
-// Function to work with type metoined in parameters
+// Function to work with type mentioned in parameters
 function calculateRectangleArea(length, width) {
     return length * width;
 }
