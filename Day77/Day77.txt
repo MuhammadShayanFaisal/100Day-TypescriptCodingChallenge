@@ -1,0 +1,2 @@
+I have red and understand the following article
+https://roadmap.sh/guides/ssl-tls-https-ssh
