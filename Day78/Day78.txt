@@ -1,0 +1,2 @@
+I have read and understand the following article
+https://roadmap.sh/guides/what-are-web-vitals. 
