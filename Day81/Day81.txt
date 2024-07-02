@@ -1,0 +1,4 @@
+I have read and understand the following article
+https://nextjs.org/learn/react-foundations
+https://nextjs.org/learn/react-foundations/what-is-react-and-nextjs
+https://nextjs.org/learn/react-foundations/rendering-ui
