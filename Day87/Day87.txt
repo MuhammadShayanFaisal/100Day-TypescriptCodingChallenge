@@ -1,0 +1,3 @@
+I have learned and understand the following articles
+[CSS Styling](MuhammadShayanFaisal/100Day-TypescriptCodingChallenge/blob/main/https://nextjs.org/learn/dashboard-app/css-styling)
+[Optimizing Font Images](MuhammadShayanFaisal/100Day-TypescriptCodingChallenge/blob/main/hp/https://nextjs.org/learn/dashboard-app/optimizing-fonts-images)
