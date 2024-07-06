@@ -1,3 +1,3 @@
 I have learned and understand the following articles
-[Learning Next.js](MuhammadShayanFaisal/100Day-TypescriptCodingChallenge/blob/main/https://nextjs.org/learn/dashboard-app)
-[Getting Started with Next.js](MuhammadShayanFaisal/100Day-TypescriptCodingChallenge/blob/main/https://nextjs.org/learn/dashboard-app/getting-started)
+https://nextjs.org/learn/dashboard-app
+https://nextjs.org/learn/dashboard-app/getting-started
