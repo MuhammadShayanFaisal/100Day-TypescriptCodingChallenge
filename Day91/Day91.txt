@@ -1,0 +1,2 @@
+I have read and understood the following article
+https://nextjs.org/learn/dashboard-app/static-and-dynamic-rendering
