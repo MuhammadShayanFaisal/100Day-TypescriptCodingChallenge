@@ -1,4 +1,4 @@
-🚀 100 Days of Coding Challenge 🚀
+# 🚀 100 Days of Coding Challenge 🚀
 Welcome to the 100 Days of Coding Challenge! This is my starting point to transition from a complete beginner to a confident developer.
 
 🎯 Challenge Objective
