@@ -1,0 +1,13 @@
+{
+  "name": "100day-typescriptcodingchallenge",
+  "version": "1.0.0",
+  "description": "Welcome to the 100 Days of Coding Challenge! This is my starting point to transition from a complete beginner to a confident developer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
